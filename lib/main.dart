@@ -22,25 +22,40 @@ class _AppState extends State<App> {
             backgroundColor: const Color(0xFFF4EDDB),
             body: Center(
                 child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                MyLargeTitle(),
-              ],
-            ))));
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    MyLargeTitle(),
+                  ],
+                ))));
   }
 }
 
-class MyLargeTitle extends StatelessWidget {
+class MyLargeTitle extends StatefulWidget {
   MyLargeTitle({
     super.key,
   });
+
+  @override
+  State<MyLargeTitle> createState() => _MyLargeTitleState();
+}
+
+class _MyLargeTitleState extends State<MyLargeTitle> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Text(
       'My Large Title',
       style: TextStyle(
-          fontSize: 30, color: Theme.of(context).textTheme.titleLarge?.color),
+          fontSize: 30, color: Theme
+          .of(context)
+          .textTheme
+          .titleLarge
+          ?.color),
     );
   }
 }
